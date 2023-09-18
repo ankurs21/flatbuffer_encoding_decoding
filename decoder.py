@@ -1,5 +1,5 @@
 import flatbuffers
-import client_generated  # Import the generated Python module (person_generated.py)
+import client_generated  # Import the generated Python module (client_generated.py)
 
 # Read the binary data from the file
 with open("person_data.bin", "rb") as file:
@@ -19,7 +19,7 @@ if client.ClientType() == person_generated.Client_Person:
     gender = person.Gender().decode('utf-8')
     print(f"Person: Name={name}, Age={age}, Weight={weight}, Gender={gender}")
 elif client.ClientType() == person_generated.Client_Group:
-    group = client.Client(person_generated.Group())  # Access the Group object
+    group = client.Client(person_generated.Group())  
     group_name = group.Name().decode('utf-8')
     avg_age = group.AverageAge()
     avg_weight = group.AverageWeight()

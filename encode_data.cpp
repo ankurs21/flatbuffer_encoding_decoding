@@ -9,10 +9,10 @@ int main() {
     int personAge = 30;
     float personWeight = 75.5;
     auto personGender = builder.CreateString("Male");
-    auto person = MyNamespace::CreatePerson(builder, personName, personAge, personWeight, personGender);
+    auto person = ClientInfo::CreatePerson(builder, personName, personAge, personWeight, personGender);
 
     // Create a Client union as a Person
-    auto clientPerson = MyNamespace::CreateClient(builder, MyNamespace::Client_Person, person.Union());
+    auto clientPerson = ClientInfo::CreateClient(builder, MyNamespace::Client_Person, person.Union());
 
     builder.Finish(clientPerson); // Finish with a Person for this example
 

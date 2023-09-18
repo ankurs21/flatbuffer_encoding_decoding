@@ -1,0 +1,25 @@
+// client.fbs
+namespace ClientInfo;
+
+table Person {
+  name: string;
+  age: int;
+  weight: float;
+  gender: string;
+}
+table Average {
+  
+}
+table Group {
+  name: string;
+  averageAge: float;
+  averageWeight: float;
+  names: [string];
+}
+
+union Client {
+  Person,
+  Group
+}
+
+root_type Client;

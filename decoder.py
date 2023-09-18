@@ -1,5 +1,5 @@
 import flatbuffers
-import person_generated  # Import the generated Python module (person_generated.py)
+import client_generated  # Import the generated Python module (person_generated.py)
 
 # Read the binary data from the file
 with open("person_data.bin", "rb") as file:

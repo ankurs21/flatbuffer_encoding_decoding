@@ -1,25 +1,26 @@
-// client.fbs
-namespace ClientInfo;
+namespace MyData;
 
 table Person {
-  name: string;
-  age: int;
-  weight: float;
-  gender: string;
-}
-table Average {
-  
-}
-table Group {
-  name: string;
-  averageAge: float;
-  averageWeight: float;
-  names: [string];
+    Name: string;
+    Age: int;
+    Weight: double;
+    Gender: string;
 }
 
-union Client {
-  Person,
-  Group
+table Group {
+    GroupName: string;
+    AverageAge: double;
+    AverageWeight: double;
+    Names: [string];
+}
+
+union ClientData {
+    Person: Person,
+    Group: Group
+}
+
+table Client {
+    client: ClientData;
 }
 
 root_type Client;

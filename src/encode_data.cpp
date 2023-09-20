@@ -7,7 +7,6 @@ using namespace MyData;
 int main() {
     flatbuffers::FlatBufferBuilder builder;
 
-    printf("Hello there 1/n");
     std::ofstream outfile("clients.bin", std::ios::binary);
     // Create a Person
     auto name = builder.CreateString("Alice");
@@ -21,7 +20,6 @@ int main() {
     names.push_back(builder.CreateString("Bob"));
     auto group = MyData::CreateGroup(builder, group_name, 27.5, 70.3, builder.CreateVector(names));
 
-    printf("Hello there/n");
     auto personUnionType = ClientData::ClientData_Person;
     auto clientPerson = CreateClient(builder, personUnionType, person.Union());
     
@@ -32,7 +30,6 @@ int main() {
 
     //builder.Clear();
 
-    printf("Hello there 2/n");
     auto groupUnionType = ClientData::ClientData_Group;
     auto clientGroup = CreateClient(builder, groupUnionType, group.Union());
 

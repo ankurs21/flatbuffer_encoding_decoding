@@ -21,7 +21,7 @@ while offset < len(data):
 
     client_data = client;
     if client_data is not None:
-        print(client.ClientType())
+        print(f"ClientType: {client.ClientType()}")
         if client_data.ClientType() == ClientData.ClientData().Person:
             person = Person.Person()
             person.Init(client_data.Client().Bytes, client_data.Client().Pos)
@@ -45,7 +45,10 @@ while offset < len(data):
                 print(f"Name {i + 1}: {names}")
         else:
             print("Unknown type")
+            exit(1)
 
         offset += client.Client().Pos
-
+        print("--------------------------------------------")
     else:
+        print("Unknown type")
+        exit(1)

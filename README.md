@@ -1,6 +1,6 @@
 # flatbuffer_encoding_decoding
 
-This is a serialize and deserialize code using flatbuffers.
+Serialize and Deserialize data using flatbuffers.
 Serialize using cpp
 Deserialize using python
 
